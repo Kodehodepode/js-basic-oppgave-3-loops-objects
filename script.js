@@ -126,18 +126,6 @@ console.log("Kombinert alder:", combinedAge); // Flere argumenter til console.lo
 const peopleWithoutOtto = people.length - 1; // kompenserer ikke for "nullindeksering" men at Otto ikke er med
 averageAge = combinedAge / peopleWithoutOtto;
 
-/*
-    Alternativt kunne antallet personer telles inni løkken med en peopleCount++ i slutten av løkken,
-    og en let-deklarasjon av peopleCount før løkken. Det slo meg plutselig at kanskje oppgaven ville dette egentlig.
-    Det er for så vidt en mer "robust" måte å gjøre det på i fall flere enn Otto skal ignoreres senere, hvor jeg så må
-    trekke flere fra people.length når jeg lager peopleWithoutOtto, som for så vidt også blir et litt uheldig variabelnavn.
-
-    *tenkepause*
-
-    Jeg tror oppgaven ikke ber om dette siden de andre variablene som behøves forhåndsdeklarert er der, men der er ikke en
-    peopleCount eller tilvsarende. Holder meg til nåværende løsning.
-*/
-
 // Skriv ut gjennomsnittsalderen slik den er, men det ble veldig mange desimaler:
 console.log("Gjennomsnittsalder:", averageAge);
 
@@ -355,10 +343,7 @@ console.log(doubleSwapRegEx("what is the point of this?", "o", "t"));
 
 function doubleSwapMap(string, charA, charB) {
     // RegEx versjonen har den fordelen at substitusjons-funksjonen kun kjører dersom bokstavene matcher, mens
-    // map må vurdere alle bokstavene, noe som krever en ekstra test.
-    // Enten må det først testes om bokstaven skal byttes, og så testes hva den skal byttes med,
-    // eller så må det først testes om bokstaven er ditt og skal erstattes med datt, og så testes om den er datt og skal erstattes med ditt.
-    // Tror jeg...
+    // map må vurdere alle bokstavene, noe som krever en ekstra test, tror jeg.
 
     string = Array.from(string);
 
@@ -462,7 +447,7 @@ greetings.forEach((greeting) => console.log(helloChecker(greeting)));
     Akkurat i vårt tilfelle kunne vi også skrive if (word in languages) {} i stedet for if (Object.hasOwn(languages, word)), noe som
     ville sett penere ut sånn rent estetisk sett, men er dårlig skikk tror jeg.
 
-    Fordi languages-objektet ble definert via en object literal har det ingen prototype-kjede imellom seg og Object.prototype,
-    og kanskje finnes ingen kollisjoner mellom Object.prototype sine nøkkler og verdiene vi ser etter (italiensk, tysk, etc). Så her går det
+    Fordi languages-objektet ble definert via en object literal har det ingen uoversiktlig prototype-kjede imellom seg og Object.prototype,
+    og det finnes ingen kollisjoner mellom Object.prototype sine nøkkler og verdiene vi ser etter (italiensk, tysk, etc). Så her går det
     tilfeldigvis bra å la "in" operatoren traversere hele prototype-kjeden. Men hasOwn er tryggere.
 */
