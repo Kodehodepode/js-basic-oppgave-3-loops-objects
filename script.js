@@ -338,6 +338,9 @@ console.log(doubleSwapRegEx("this is a string", "i", "s"));
 console.log(doubleSwapRegEx("m#ybe #nother #ppro#ch is necess#ry", "#", "a"));
 console.log(doubleSwapRegEx("what is the point of this?", "o", "t"));
 
+*/
+
+/*
 
 // Alternativ løsning: map
 
