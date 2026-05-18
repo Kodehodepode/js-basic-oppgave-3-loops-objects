@@ -448,9 +448,9 @@ greetings.forEach((greeting) => console.log(helloChecker(greeting)));
 
 /*
     Akkurat i vårt tilfelle kunne vi også skrive if (word in languages) {} i stedet for if (Object.hasOwn(languages, word)), noe som
-    ville sett penere ut sånn rent estetisk sett, men er dårlig skikk tror jeg.
+    ville sett penere ut sånn rent estetisk sett, men er "dårlig skikk" tror jeg(?)
 
     Fordi languages-objektet ble definert via en object literal har det ingen uoversiktlig prototype-kjede imellom seg og Object.prototype,
     og det finnes ingen kollisjoner mellom Object.prototype sine nøkkler og verdiene vi ser etter (italiensk, tysk, etc). Så her går det
-    tilfeldigvis bra å la "in" operatoren traversere hele prototype-kjeden. Men hasOwn er tryggere.
+    bra å la "in" operatoren traversere hele prototype-kjeden. Men hasOwn er tryggere.
 */
